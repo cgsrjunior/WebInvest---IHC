@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}  
+
+{% block content %}
+    <section class="article-list" style="margin: 40px;padding: px;border-radius: 15px;">
+        <div class="container">
+            <div class="intro"></div>
+        </div>
+        <div class="row register-form">
+            <div class="col-md-12 offset-md-0" style="padding-right: 0px;padding-left: opx;">
+                <form class="custom-form" method="post" action="#">
+                    {% csrf_token %}
+                    <h1>Registros</h1>
+                    <div class="row form-group">
+                        <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">Título</label></div>
+                        <div class="col-sm-6 input-column">{{ record_form.title|as_crispy_field }}</div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-sm-4 label-column"><label class="col-form-label" for="email-input-field">Valor</label></div>
+                        <div class="col-sm-6 input-column">{{ record_form.value|as_crispy_field }}</div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-sm-4 label-column"><label class="col-form-label" for="pawssword-input-field">Tipo</label></div>
+                        <div class="col-sm-6 input-column">
+                            {{ record_form.type|as_crispy_field }}
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-sm-4 label-column"><label class="col-form-label" for="pawssword-input-field">Categoria</label></div>
+                        <div class="col-sm-6 input-column">
+                            {{ record_form.category|as_crispy_field }}
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">Data</label></div>
+                        <div class="col-sm-6 input-column">{{ record_form.pub_date|as_crispy_field }}</div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col">
+                            <div class="row form-group">
+                                <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">Tabela de Registros (CSV)</label></div>
+                                <div class="col-sm-6 input-column"><input class="form-control" type="file"></div>
+                            </div>
+                        </div>
+                    </div><button class="btn btn-light submit-button" type="submit">Salvar alterações</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+{% endblock %}
