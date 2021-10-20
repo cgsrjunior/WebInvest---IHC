@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>WebInvest</title>
+    <link rel="stylesheet" href="{% static 'first/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <link rel="stylesheet" href="{% static 'first/fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'first/css/styles.css' %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'webinvest/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'webinvest/bootstrap/css/bootstrapgoals.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <link rel="stylesheet" type="text/css" href="{% static 'webinvest/fonts/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'webinvest/css/Article-Clean.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'webinvest/css/Article-List.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'webinvest/css/Features-Blue.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'webinvest/css/Footer-Clean.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'webinvest/css/Footer-Dark.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'webinvest/css/Header-Blue.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'webinvest/css/Highlight-Blue.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'webinvest/css/Highlight-Blue.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'webinvest/css/Lista-Productos-Canito.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'webinvest/css/Login-Form-Clean.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'webinvest/css/Pretty-Registration-Form.css' %}">
+
+</head>
+
+<body>
+    <header class="header-blue">
+        <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search">
+            <div class="container-fluid"><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse d-xl-flex justify-content-xl-center" id="navcol-1" style="height: 63px;">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"></li>
+                    </ul><a class="navbar-brand text-center" href="{% url 'webinvest:initial' %}" style="font-size: 50px;">Web Invest</a><span class="navbar-text"> </span>
+                </div>
+            </div>
+        </nav>
+
+        {% block content %}
+        {% endblock %}
+        
+    </header>
+    <script src="{% static 'first/bootstrap/js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>
