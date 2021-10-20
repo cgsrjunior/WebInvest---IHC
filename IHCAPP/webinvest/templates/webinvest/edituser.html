@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<section class="article-list" style="margin: 40px;padding: px;border-radius: 15px;">
+    <div class="container">
+        <div class="intro"></div>
+    </div>
+    <div class="row register-form">
+        <div class="col-md-8 offset-md-2" style="padding-right: 0px;padding-left: opx;">
+            <form class="custom-form">
+                <h1>Edição de Conta</h1>
+                <div class="row form-group">
+                    <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">Nome</label>
+                    </div>
+                    <div class="col-sm-6 input-column"><input class="form-control" type="text" placeholder="Matheus">
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-sm-4 label-column"><label class="col-form-label" for="email-input-field">Email
+                        </label></div>
+                    <div class="col-sm-6 input-column"><input class="form-control" type="email"
+                            placeholder="matheus@email.com"></div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-sm-4 label-column"><label class="col-form-label"
+                            for="dropdown-input-field">Sexo</label></div>
+                    <div class="col-sm-4 input-column">
+                        <div class="dropdown"><button class="btn btn-light dropdown-toggle" aria-expanded="false"
+                                data-bs-toggle="dropdown" type="button">Selecionar</button>
+                            <div class="dropdown-menu"><a class="dropdown-item" href="#">Masculino</a><a
+                                    class="dropdown-item" href="#">Feminino</a><a class="dropdown-item" href="#">Prefiro
+                                    não responder</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">Data de
+                            Nascimento</label></div>
+                    <div class="col-sm-6 input-column"><input class="form-control" type="date" value="01/10/1998"></div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-sm-4 label-column"><label class="col-form-label" for="email-input-field">Renda
+                            Fixa</label></div>
+                    <div class="col-sm-6 input-column"><input class="form-control" type="email"
+                            placeholder="R$ 1.200,00" inputmode="numeric"></div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-sm-4 label-column" style="text-align: right;"><label class="col-form-label"
+                            for="email-input-field">Senha</label></div>
+                    <div class="col-sm-6 input-column"><button class="btn btn-light submit-button" type="button"
+                            style="height: 35px;padding: 5px 10px;margin: 0px;background: rgb(0,27,48);font-size: 14px;">Alterar
+                            Senha</button></div>
+                </div><button class="btn btn-light submit-button" type="button">Salvar alterações</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

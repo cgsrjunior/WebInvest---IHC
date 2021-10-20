@@ -17,4 +17,34 @@ def singup(request):
 
     return render(request, template, context)
 
+def user(request):
+    template ='webinvest/user.html'
+
+    context = {}
+
+    #goals = Goals.objects.all()
+    #context['goals'] = goals
+
+    return render(request, template, context)
+
+def edit_user(request):
+    template ='webinvest/edituser.html'
+
+    context = {}
+
+    #goals = Goals.objects.all()
+    #context['goals'] = goals
+
+    return render(request, template, context)
+
+def initial(request):
+    template ='webinvest/first.html'
+
+    context = {}
+
+    #goals = Goals.objects.all()
+    #context['goals'] = goals
+
+    return render(request, template, context)
+
 
