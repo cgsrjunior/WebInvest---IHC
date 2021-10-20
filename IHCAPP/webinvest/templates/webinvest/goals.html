@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<section class="article-list" style="margin: 40px;padding: 40px;border-radius: 15px;">
+    <div class="container">
+        <div class="intro">
+            <h2 class="text-center">Seja bem vindo!</h2>
+            <p class="text-center">Seu balanço será exibido logo abaixo</p>
+        </div>
+        <div class="row space-rows">
+            <div class="col justify-content-end" id="account-values">
+                <div class="card cards-shadown cards-hover" data-aos="flip-left" data-aos-duration="950">
+                    <div class="card-header" style="background: rgb(24,78,142);"><span class="space"><a href="#"><i
+                                    class="fa fa-cloud-download" id="download-icon-1"></i></a></span>
+                        <div class="cardheader-text">
+                            <h4 id="heading-card-1" style="color: rgb(46,208,5);">R$ 1800,00</h4>
+                            <p id="cardheader-subtext-1"
+                                style="border-color: rgb(237,241,244);color: rgb(247,235,235);">Receitas</p>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text sub-text-color">Last activity:</p>
+                        <p class="card-text cardbody-sub-text">2 minutes ago</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card cards-shadown cards-hover" data-aos="slide-right" data-aos-duration="950">
+                    <div class="card-header" style="background: rgb(24,78,142);"><span class="space"><a href="#"><i
+                                    class="fa fa-cloud-download" id="download-icon-2"></i></a></span>
+                        <div class="cardheader-text">
+                            <h4 id="heading-card-2" style="color: rgb(203,100,100);">R$ 900,00</h4>
+                            <p id="cardheader-subtext-2" style="color: rgb(242,245,247);">Despesas</p>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text sub-text-color">Last activity:</p>
+                        <p class="card-text cardbody-sub-text">2 minutes ago</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card cards-shadown cards-hover" data-aos="flip-up" data-aos-duration="950">
+                    <div class="card-header cards-header-hover" style="background: rgb(24,78,142);"><span
+                            class="space"><a href="#"><i class="fa fa-cloud-download"
+                                    id="download-icon-3"></i></a></span>
+                        <div class="cardheader-text">
+                            <h4 id="heading-card-3" style="color: rgb(118,185,214);">R$ 900,00</h4>
+                            <p id="cardheader-subtext-3" style="color: rgb(237,240,242);">Valor Economizado</p>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text sub-text-color">Last activity:</p>
+                        <p class="card-text cardbody-sub-text">2 minutes ago</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="container">
+                <h2 class="display-4" style="font-size: 28.112px;">Ultimas Lançamentos Registrados</h2>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th style="font-size: 25px;">Lançamentos</th>
+                                <th class="text-center" style="font-size: 25px;">Detalhes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="line-height: 60px;font-size: 20px;">Torta mil folhas, 2 Unidades</td>
+                                <td><button class="btn btn-primary btn-block text-center d-block pull-right"
+                                        type="button" style="height: 61px;background: #129979;"><i class="fas fa-edit"
+                                            style="font-size: 36px;"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td style="font-size: 20px;line-height: 60px;">Mochaccino, 1 Unidade</td>
+                                <td><button class="btn btn-primary btn-block text-center d-block pull-right"
+                                        type="button" style="height: 61px;background: #129979;"><i class="fas fa-edit"
+                                            style="font-size: 36px;"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td style="font-size: 20px;line-height: 60px;">Empanadas, 12 Unidades</td>
+                                <td class="text-start"
+                                    style="padding: 11px;padding-right: 11px;padding-top: 12px;padding-left: 11px;">
+                                    <button class="btn btn-primary btn-block text-center d-block pull-right"
+                                        type="button"
+                                        style="height: 61px;filter: blur(0px) brightness(100%) grayscale(0%);background: #129979;"><i
+                                            class="fas fa-edit" style="font-size: 36px;"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div><button class="btn btn-primary" type="button">Consulta avançada</button>
+            </div>
+        </div>
+        <div class="card-group"></div>
+    </div>
+    <div class="container" style="height: 1032.67;">
+        <h2 style="font-weight: bold;">Metas Definidas</h2>
+        <div class="col-auto col-md-4 col-xl-7 offset-xl-0" id="progressbar" style="width: 100%;">
+            <h5 style="height: 30;">Pagar Carro</h5>
+            <div class="progress beautiful progress-lg" style="width: 100%;">
+                <div class="progress-bar bg-primary" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
+                    style="width: 80%;">80%</div>
+            </div>
+            <div class="Push-20"></div><small class="form-text"></small><small class="form-text"></small>
+        </div>
+        <div class="col-md-4" id="progressbar" style="width: 100%;">
+            <h5 style="height: 30;">Economizar Alimentação</h5>
+            <div class="progress beautiful progress-lg" style="width: 100%;">
+                <div class="progress-bar bg-dark" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
+                    style="width: 80%;">80%</div>
+            </div>
+        </div>
+        <div class="col-md-4" id="progressbar" style="width: 100%;">
+            <div class="Push-20"></div>
+            <h5 style="height: 30;">Diminuir passeios</h5>
+            <div class="progress beautiful progress-lg" style="width: 100%;">
+                <div class="progress-bar bg-danger" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
+                    style="width: 80%;">80%</div>
+            </div>
+            <div class="Push-20"></div>
+            <div class="Push-20"><button class="btn btn-primary" type="button">Consulta Avançada</button></div>
+        </div>
+    </div>
+    <header></header>
+    <div class="container">
+        <header></header>
+    </div>
+</section>
+{% endblock %}
