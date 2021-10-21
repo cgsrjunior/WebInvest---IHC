@@ -8,7 +8,7 @@
     <div class="row register-form" style="padding: 14px; width: 100%">
         <div class="col-md-12 col-lg-10 offset-md-0 offset-lg-1" style="padding-right: 0px;padding-left: opx;">
             <div class="row">
-                <div class="col offset-lg-0"><a class="btn btn-primary" href="#" role="button">Novo
+                <div class="col offset-lg-0"><a class="btn btn-primary" href="{% url 'webinvest:record_add' %}" role="button">Novo
                         Registro</a></div>
                 <div class="col-lg-4 offset-lg-4">
                     <div class="float-start float-md-end mt-5 mt-md-0 search-area"><i
@@ -26,6 +26,7 @@
                     <tr>
                         <th>Data</th>
                         <th>Título</th>
+                        <th>Tipo</th>
                         <th>Categoria</th>
                         <th>Valor</th>
                         <th>Ações</th>
@@ -36,6 +37,7 @@
                         <tr>
                             <td>{{ record.pub_date }}</td>
                             <td>{{ record.title }}</td>
+                            <td>{{ record.type }}</td>
                             <td>{{ record.category }}</td>
                             <td>R${{ record.value }}</td>
                             <td>

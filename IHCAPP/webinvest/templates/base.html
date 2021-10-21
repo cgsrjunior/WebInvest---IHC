@@ -9,16 +9,20 @@
     <title>Web Invests</title>
     <link rel="stylesheet" type="text/css" href="{% static 'webinvest/bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'webinvest/bootstrap/css/bootstrapgoals.min.css' %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'statistics/bootstrap/css/bootstrap.min.css' %}">
+    
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+
     <link rel="stylesheet" type="text/css" href="{% static 'webinvest/fonts/fontawesome-all.min.css' %}">
+
     <link rel="stylesheet" type="text/css" href="{% static 'webinvest/css/Article-Clean.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'webinvest/css/Article-List.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'webinvest/css/Features-Blue.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'webinvest/css/Footer-Clean.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'webinvest/css/Footer-Dark.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'webinvest/css/Header-Blue.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'webinvest/css/Highlight-Blue.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'webinvest/css/Highlight-Blue.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'webinvest/css/Lista-Productos-Canito.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'webinvest/css/Login-Form-Clean.css' %}">
@@ -33,6 +37,20 @@
     <link rel="stylesheet" href="{% static 'webinvest//css/progress-bars.css' %}">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <link rel="stylesheet" href="{% static 'statistics/css/Animation-Cards.css' %}">
+    <link rel="stylesheet" href="{% static 'statistics/css/Animation-Cards-1.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'statistics/css/Article-Clean.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'statistics/css/Article-List.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'statistics/css/Features-Blue.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'statistics/css/Footer-Clean.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'statistics/css/Footer-Dark.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'statistics/css/Header-Blue.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'statistics/css/Highlight-Blue.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'statistics/css/Juvi---Push-Empty-Space-20px.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'statistics/css/Login-Form-Clean.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'statistics//css/progress-bars.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'statistics/css/styles.css' %}">
 
 </head>
 
@@ -55,7 +73,7 @@
                         <ul class="navbar-nav">
                             <li class="nav-item"><a class="nav-link" href="{% url 'webinvest:goals' %}">Página Inicial</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'webinvest:record' %}">Registros</a></li>
-                            <li class="nav-item"></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'webinvest:statistics' %}">Estatísticas</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'webinvest:user' %}">Minha Conta</a></li>
                         </ul>
                     </div>
@@ -77,8 +95,11 @@
         </header>
     </header>
     <div></div>
-    <script src="webinvest/assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="webinvest/assets/bootstrap/js/bootstrapgoals.min.js"></script>
+    <script src="webinvest/bootstrap/js/bootstrap.min.js"></script>
+    <script src="webinvest/bootstrap/js/bootstrapgoals.min.js"></script>
+
+    <script src="statistics/bootstrap/js/bootstrap.min.js"></script>
+    <script src="statistics/bootstrap/js/bootstrapgoals.min.js"></script>
 </body>
 
 </html>
