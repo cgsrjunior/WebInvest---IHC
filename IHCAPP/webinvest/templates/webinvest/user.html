@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<section class="article-list" style="margin: 40px;padding: px;border-radius: 15px;">
+    <div class="container">
+        <div class="intro"></div>
+    </div>
+    <div class="row register-form">
+        <div class="col-md-8 offset-md-2" style="padding-right: 0px;padding-left: opx;">
+            <form class="custom-form">
+                <h1>Minha Conta</h1>
+                <div class="row form-group">
+                    <div class="col-sm-4 label-column"><label class="col-form-label"
+                            for="name-input-field">Título</label></div>
+                    <div class="col-sm-3"><label class="col-form-label">Marcelo Cavalcante</label></div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-sm-4 label-column"><label class="col-form-label"
+                            for="dropdown-input-field"><label>Sexo</label></div>
+                    <div class="col-sm-3"><label class="col-form-label">Masculino</label></div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">Data de
+                            Nascimento</label></div>
+                    <div class="col-sm-3"><label class="col-form-label">10/05/1980</label></div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-sm-4 label-column"><label class="col-form-label" for="email-input-field">Renda
+                            Fixa</label></div>
+                    <div class="col-sm-3"><label class="col-form-label">R$1800.00</label></div>
+                </div><a class="btn btn-light submit-button" href="./edit" role="button">Alterar Dados</a>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

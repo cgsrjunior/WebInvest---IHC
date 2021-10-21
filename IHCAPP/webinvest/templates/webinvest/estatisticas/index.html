@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Web Invest</title>
+    <link rel="stylesheet" href="{% static 'statistics/bootstrap/css/bootstrap.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'statistics/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <link rel="stylesheet" href="{% static 'statistics/css/Animation-Cards-1.css' %}">
+    <link rel="stylesheet" href="{% static 'statistics/css/Animation-Cards.css' %}">
+    <link rel="stylesheet" href="{% static 'statistics/css/Article-Clean.css' %}">
+    <link rel="stylesheet" href="{% static 'statistics/css/Article-List.css' %}">
+    <link rel="stylesheet" href="{% static 'statistics/css/Features-Blue.css' %}">
+    <link rel="stylesheet" href="{% static 'statistics/css/Footer-Clean.css' %}">
+    <link rel="stylesheet" href="{% static 'statistics/css/Footer-Dark.css' %}">
+    <link rel="stylesheet" href="{% static 'statistics/css/Header-Blue.css' %}">
+    <link rel="stylesheet" href="{% static 'statistics/css/Highlight-Blue.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="{% static 'statistics/css/Juvi---Push-Empty-Space-20px.css' %}">
+    <link rel="stylesheet" href="{% static 'statistics/css/Login-Form-Clean.css' %}">
+    <link rel="stylesheet" href="{% static 'statistics/css/progress-bars.css' %}">
+    <link rel="stylesheet" href="{% static 'statistics/css/styles.css' %}">
+</head>
+
+<body>
+    <header class="header-blue">
+        <header class="header-blue">
+            <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search">
+                <div class="container-fluid"><a class="navbar-brand" href="#">Web Invest</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navcol-1">
+                        <ul class="navbar-nav">
+                            <li class="nav-item"></li>
+                        </ul>
+                        <form class="d-flex me-auto navbar-form" target="_self">
+                            <div class="d-flex align-items-center"><label class="form-label d-flex mb-0" for="search-field"></label></div>
+                        </form><span class="navbar-text"> </span>
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a class="nav-link" href="{% url 'webinvest:goals' %}">Página Inicial</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'webinvest:record' %}">Registros</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'webinvest:statistics' %}">Estatísticas</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'webinvest:user' %}">Minha Conta</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <section class="article-list" style="margin: 40px;padding: 40px;border-radius: 15px;">
+                <div class="container">
+                    <div class="intro">
+                        <h2 class="text-center">Estatisticas do Usuário</h2>
+                        <p class="text-center">Seu balanço será exibido logo abaixo</p>
+                    </div>
+                    <div></div>
+                    <div class="card-group"></div>
+                </div>
+                <div class="col" id="bars-graph">
+                    <div class="flex-grow-1 flex-shrink-1" data-bs-toggle="tooltip" data-bss-tooltip="" data-aos="fade"><canvas data-bss-chart="{&quot;type&quot;:&quot;pie&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;Alimentação&quot;,&quot;Contas&quot;,&quot;Gasolina&quot;,&quot;Passeio&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;Revenue&quot;,&quot;backgroundColor&quot;:[&quot;rgb(247,217,62)&quot;,&quot;rgb(153,10,44)&quot;,&quot;rgb(23,108,27)&quot;,&quot;rgba(73,14,238,0.99)&quot;],&quot;borderColor&quot;:[&quot;#132045&quot;,&quot;#132045&quot;,&quot;#132045&quot;,&quot;#132045&quot;],&quot;data&quot;:[&quot;33&quot;,&quot;33&quot;,&quot;23&quot;,&quot;10&quot;]}]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:true,&quot;legend&quot;:{&quot;display&quot;:true,&quot;labels&quot;:{&quot;fontStyle&quot;:&quot;normal&quot;,&quot;fontColor&quot;:&quot;#1b1111&quot;}},&quot;title&quot;:{&quot;fontStyle&quot;:&quot;bold&quot;,&quot;display&quot;:true,&quot;text&quot;:&quot;Distribuição dos Gastos&quot;}}}"></canvas></div>
+                    <div class="Push-20"></div>
+                    <div data-bs-toggle="tooltip" data-bss-tooltip="" ><canvas data-bss-chart="{&quot;type&quot;:&quot;bar&quot;,&quot;data&quot;:{&quot;labels&quot;:[],&quot;datasets&quot;:[{&quot;label&quot;:&quot;Alimentação&quot;,&quot;backgroundColor&quot;:&quot;#e3d349&quot;,&quot;borderColor&quot;:&quot;#132045&quot;,&quot;data&quot;:[&quot;33&quot;]},{&quot;label&quot;:&quot;Contas&quot;,&quot;backgroundColor&quot;:&quot;rgb(211,13,13)&quot;,&quot;borderColor&quot;:&quot;rgb(0,0,0)&quot;,&quot;data&quot;:[&quot;33&quot;]},{&quot;label&quot;:&quot;Gasolina&quot;,&quot;backgroundColor&quot;:&quot;rgb(55,52,221)&quot;,&quot;borderColor&quot;:&quot;rgb(0,0,0)&quot;,&quot;data&quot;:[&quot;33&quot;]}]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:true,&quot;legend&quot;:{&quot;display&quot;:true,&quot;labels&quot;:{&quot;fontStyle&quot;:&quot;normal&quot;,&quot;fontColor&quot;:&quot;#1b1111&quot;}},&quot;title&quot;:{&quot;fontStyle&quot;:&quot;bold&quot;,&quot;display&quot;:true,&quot;text&quot;:&quot;Distribuição dos Gastos (Quantidade)&quot;},&quot;scales&quot;:{&quot;xAxes&quot;:[{&quot;ticks&quot;:{&quot;fontStyle&quot;:&quot;normal&quot;}}],&quot;yAxes&quot;:[{&quot;ticks&quot;:{&quot;fontStyle&quot;:&quot;normal&quot;}}]}}}"></canvas></div>
+                </div>
+                <header></header>
+            </section>
+            <div class="container" style="background: rgba(183,165,165,0.94);">
+                <div></div>
+            </div>
+        </header>
+    </header>
+    <script src="{% static 'statistics/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'statistics/js/chart.min.js' %}"></script>
+    <script src="{% static 'statistics/js/bs-init.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+</body>
+
+</html>
