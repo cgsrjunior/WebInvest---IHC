@@ -79,7 +79,7 @@
                             </tr>
                         </tbody>
                     </table>
-                </div><a class="btn btn-primary" href="{% url 'webinvest:statistics' %}" role="button">Consulta avançada</a>
+                </div><a class="btn btn-primary" href="{% url 'webinvest:record' %}" role="button">Ver registros</a>
             </div>
         </div>
         <div class="card-group"></div>
@@ -109,7 +109,10 @@
                     style="width: 80%;">80%</div>
             </div>
             <div class="Push-20"></div>
-            <div class="Push-20"><button class="btn btn-primary" type="button">Consulta Avançada</button></div>
+
+            <div class="Push-20">
+                <a class="btn btn-primary" href="{% url 'webinvest:statistics' %}" role="button">Consulta avançada</a>
+            </div>
         </div>
     </div>
     <header></header>
