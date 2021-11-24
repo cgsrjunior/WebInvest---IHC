@@ -14,10 +14,13 @@
                 <div class="col offset-lg-0"><a class="btn btn-primary" href="{% url 'webinvest:record_add' %}" role="button">Novo
                         Registro</a></div>
                 <div class="col-lg-4 offset-lg-4">
-                    <div class="float-start float-md-end mt-5 mt-md-0 search-area"><i
-                            class="fas fa-search float-start search-icon"></i><input
-                            class="float-start float-sm-end custom-search-input" type="search"
-                            placeholder="Procurar por título"></div>
+                    <form action="{% url 'webinvest:record' 'title' prox_order %}" method="post">
+                        {% csrf_token %}
+                        <div class="float-start float-md-end mt-5 mt-md-0 search-area"><i
+                                class="fas fa-search float-start search-icon"></i><input
+                                name="query" class="float-start float-sm-end custom-search-input" type="search"
+                                placeholder="Procurar por título"></div>
+                    </form>
                 </div>
             </div>
             <div class="container">
@@ -27,11 +30,11 @@
                 width="100%">
                 <thead>
                     <tr>
-                        <th>Data</th>
-                        <th>Título</th>
-                        <th>Tipo</th>
-                        <th>Categoria</th>
-                        <th>Valor</th>
+                        <th><a style="color:black" href="{% url 'webinvest:record' 'pub_date' prox_order %}">Data</a></th>
+                        <th><a style="color:black" href="{% url 'webinvest:record' 'title' prox_order %}">Título</a></th>
+                        <th><a style="color:black" href="{% url 'webinvest:record' 'type' prox_order %}">Tipo</a></th>
+                        <th><a style="color:black" href="{% url 'webinvest:record' 'category' prox_order %}">Categoria</a></th>
+                        <th><a style="color:black" href="{% url 'webinvest:record' 'value' prox_order %}">Valor</a></th>
                         <th>Ações</th>
                     </tr>
                 </thead>

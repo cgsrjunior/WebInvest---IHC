@@ -10,6 +10,8 @@ app_name = 'webinvest'
 urlpatterns = [
     path('', sing_views.initial, name='initial'),
     path('record/', record_views.show_records, name='record'),
+    path('record/<str:column_name>/<str:order>', record_views.show_records, name='record'),
+
     path('record/<int:record_id>/delete/', record_views.delete, name='delete'),
     path('record/add/', record_views.add, name='record_add'),
     path('record/<int:record_id>/edit/', record_views.edit, name='edit'),

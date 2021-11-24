@@ -8,13 +8,32 @@ from django.forms import modelformset_factory
 from django.shortcuts import render
 
 
-def show_records(request):
+def show_records(request, column_name=None, order=None, ):
     template = 'webinvest/record.html'
 
     context = {}
 
-    records = Record.objects.all()
+    try:
+        query = request.POST.get("query", "")
+    except:
+        query = ""
+        
+
+    if column_name == None:
+        column = 'title'
+    else:
+        column = column_name
+    
+    if order == 'desc':
+        prox_order = 'asc'
+        records = Record.objects.all().filter(title__contains=query).order_by(column).reverse()
+    else:
+        prox_order = 'desc'
+        records = Record.objects.all().filter(title__contains=query).order_by(column)
+    
     context['records'] = records
+    context['prox_order'] = prox_order
+    context['query'] = query
 
     return render(request, template, context)
 
