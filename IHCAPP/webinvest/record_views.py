@@ -7,8 +7,9 @@ from webinvest.models import Record, RecordForm
 from django.forms import modelformset_factory
 from django.shortcuts import render
 
+
 def show_records(request):
-    template ='webinvest/record.html'
+    template = 'webinvest/record.html'
 
     context = {}
 
@@ -22,6 +23,7 @@ def delete(request, record_id):
     Record.objects.filter(id=record_id).delete()
 
     return show_records(request)
+
 
 def add(request):
     template = 'webinvest/record_add.html'
@@ -40,6 +42,7 @@ def add(request):
 
     return render(request, template, context)
 
+
 def edit(request, record_id):
     template = 'webinvest/record_add.html'
     context = {}
@@ -52,12 +55,12 @@ def edit(request, record_id):
             record_form.save()
             return show_records(request)
     else:
-        record_form = RecordForm()
+        record_form = RecordForm(instance=record)
 
     context['record_form'] = record_form
 
     return render(request, template, context)
-    
+
     '''title = request.POST['title']
     category = request.POST['category']
     value = request.POST['value']
@@ -65,6 +68,7 @@ def edit(request, record_id):
 
     return HttpResponse("Você está adicionando o registro")
     '''
+
 
 '''
 def detail(request, record_id):
@@ -87,4 +91,3 @@ def detail(request, record_id):
 
     context['formset'] = formset
 '''
-
