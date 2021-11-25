@@ -47,9 +47,10 @@
                             <td>{{ record.category }}</td>
                             <td>R${{ record.value }}</td>
                             <td>
-                                <a class="btn btn-warning" href="{{ record.id }}/edit" role="button"><i
+                                <a class="btn btn-warning" href="{% url 'webinvest:edit' record.id %}"" role="button"><i
                                         class="fas fa-pencil-alt d-xl-flex justify-content-xl-center align-items-xl-center"></i></a>
-                                <a  onclick="return confirm('Tem certeza que deseja excluir?')" class="btn btn-danger" href="{{ record.id }}/delete" role="button"><i
+
+                                <a  onclick="return confirm('Tem certeza que deseja excluir?')" class="btn btn-danger" href="{% url 'webinvest:delete' record.id %}" role="button"><i
                                         class="far fa-trash-alt d-xl-flex justify-content-xl-center align-items-xl-center"></i></a>
                             </td>
                         </tr>

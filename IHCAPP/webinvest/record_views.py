@@ -62,7 +62,7 @@ def add(request):
     return render(request, template, context)
 
 
-def edit(request, record_id):
+def edit(request, record_id=None):
     template = 'webinvest/record_add.html'
     context = {}
 

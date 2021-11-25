@@ -3,8 +3,7 @@ from django.urls import path
 from webinvest import goals_views
 from webinvest import sing_views
 from webinvest import statistic_view
-
-from . import record_views
+from webinvest import record_views
 
 app_name = 'webinvest'
 urlpatterns = [
@@ -12,9 +11,9 @@ urlpatterns = [
     path('record/', record_views.show_records, name='record'),
     path('record/<str:column_name>/<str:order>', record_views.show_records, name='record'),
 
-    path('record/<int:record_id>/delete/', record_views.delete, name='delete'),
+    path('record/delete/<int:record_id>/', record_views.delete, name='delete'),
     path('record/add/', record_views.add, name='record_add'),
-    path('record/<int:record_id>/edit/', record_views.edit, name='edit'),
+    path('record/edit/<int:record_id>/', record_views.edit, name='edit'),
 
     path('goals/', goals_views.show_goals, name='goals'),
 
