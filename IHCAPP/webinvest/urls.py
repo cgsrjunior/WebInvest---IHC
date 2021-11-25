@@ -17,6 +17,12 @@ urlpatterns = [
 
     path('goals/', goals_views.show_goals, name='goals'),
 
+    path('goals/', goals_views.show_goals, name='addgoals'),
+
+    path('addgoals/delete/<int:record_id>/', goals_views.delete, name='delete'),
+    path('addgoals/add/', goals_views.add, name='record_add'),
+    path('addgoals/edit/<int:record_id>/', goals_views.edit, name='edit'),
+
     path('singup/', sing_views.singup, name='singup'),
     path('user/', sing_views.user, name='user'),
     path('user/edit', sing_views.edit_user, name='user_edit'),

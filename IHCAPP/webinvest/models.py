@@ -68,3 +68,43 @@ class RecordForm(ModelForm):
         self.helper.form_show_labels = False 
 
 
+class Priority(models.Model):
+    name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name
+
+class PriorityForm(ModelForm):
+    class Meta:
+        model = Priority
+        fields = ['name']
+        
+    def __init__(self, *args, **kwargs):
+        super(CategoryForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_show_labels = False
+
+class Goal(models.Model):
+    title = models.CharField(max_length=200)
+    priority = models.ForeignKey(Priority, on_delete=models.PROTECT)
+    goal_defined = models.FloatField(default=0.0)
+    value_acc = models.FloatField(default=0.0)
+
+    def __str__(self):
+        return self.title
+
+    def get_percentage(self):
+        perc = (abs(round(((value_acc - goal_defined) / goal_defined) * 100)))
+
+
+class RecordForm(ModelForm):
+    class Meta:
+        model = Record
+        fields = '__all__'
+
+    def __init__(self, *args, **kwargs):
+        super(RecordForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_show_labels = False 
+
+

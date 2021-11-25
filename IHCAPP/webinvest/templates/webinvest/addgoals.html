@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="article-list" style="margin: 40px;padding: px;border-radius: 15px;">
+    <div class="container">
+        <div class="intro">
+            <h2 class="text-center">Metas</h2>
+            <p class="text-center">Todas as metas registradas com seu devido progresso.</p>
+        </div>
+    </div>
+    <div class="row register-form" style="padding: 14px; width: 100%">
+        <div class="col-md-12 col-lg-10 offset-md-0 offset-lg-1" style="padding-right: 0px;padding-left: opx;">
+            <div class="row">
+                <div class="col offset-lg-0"><a class="btn btn-primary" href="{% url 'webinvest:addgoals_add' %}" role="button">Nova
+                        Meta</a></div>
+                <div class="col-lg-4 offset-lg-4">
+                    <form action="{% url 'webinvest:record' 'title' prox_order %}" method="post">
+                        {% csrf_token %}
+                        <div class="float-start float-md-end mt-5 mt-md-0 search-area"><i
+                                class="fas fa-search float-start search-icon"></i><input
+                                name="query" class="float-start float-sm-end custom-search-input" type="search"
+                                placeholder="Procurar por título"></div>
+                    </form>
+                </div>
+            </div>
+            <div class="container">
+                <div class="float-start float-md-end mt-5 mt-md-0 search-area"></div>
+            </div>
+            <table id="example" class="table table-striped table-bordered table-responsive" cellspacing="0"
+                width="100%">
+                <thead>
+                    <tr>
+                        <th><a style="color:black" href="{% url 'webinvest:addgoals' 'title' prox_order %}">Título</a></th>
+                        <th><a style="color:black" href="{% url 'webinvest:addgoals' 'category' prox_order %}">Prioridade</a></th>
+                        <th><a style="color:black" href="{% url 'webinvest:addgoals' 'value_desired' prox_order %}">Meta estabelecida</a></th>
+                        <th><a style="color:black" href="{% url 'webinvest:addgoals' 'acumulated_value' prox_order %}">Valor Arrecadado</a></th>
+                        <th><a style="color:black" href="{% url 'webinvest:addgoals' 'goal_achive_perc' prox_order %}">Porcentagem atingida</a></th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for record in goals %}
+                        <tr>
+                            <td>{{ record.title }}</td>
+                            <td>{{ record.category }}</td>
+                            <td>R${{ record.value_desired }}</td>
+                            <td>R${{ record.accumulated_value }}</td>
+                            <td>R${{ record.get_percentage }}</td>
+                            <td>
+                                <a class="btn btn-warning" href="{{ record.id }}/edit" role="button"><i
+                                        class="fas fa-pencil-alt d-xl-flex justify-content-xl-center align-items-xl-center"></i></a>
+                                <a  onclick="return confirm('Tem certeza que deseja excluir?')" class="btn btn-danger" href="{{ record.id }}/delete" role="button"><i
+                                        class="far fa-trash-alt d-xl-flex justify-content-xl-center align-items-xl-center"></i></a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <br />
+        </div>
+    </div>
+</section>
+{% endblock %}
