@@ -9,8 +9,6 @@ from django.shortcuts import render
 
 from django.db.models import F, Func
 
-import numpy as np
-
 def show_goals(request):
     template ='webinvest/goals.html'
 
