@@ -93,11 +93,20 @@ class Goal(models.Model):
     def __str__(self):
         return self.title
 
-    def get_percentage(self):
-        perc = (abs(round(((value_acc - goal_defined) / goal_defined) * 100)))
+    #def get_percentage(self):
+    #    perc = (abs(round(((value_acc - goal_defined) / goal_defined) * 100)))
 
+class GoalForm(ModelForm):
+    class Meta:
+        model = Goal
+        fields = '__all__'
 
-class RecordForm(ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(GoalForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_show_labels = False 
+
+'''class RecordForm(ModelForm):
     class Meta:
         model = Record
         fields = '__all__'
@@ -105,6 +114,7 @@ class RecordForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super(RecordForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper()
-        self.helper.form_show_labels = False 
+        self.helper.form_show_labels = False '''
+
 
 

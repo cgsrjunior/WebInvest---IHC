@@ -16,12 +16,14 @@ urlpatterns = [
     path('record/edit/<int:record_id>/', record_views.edit, name='edit'),
 
     path('goals/', goals_views.show_goals, name='goals'),
+    path('goals/add', goals_views.add, name='goals_add'),
+    path('goals/edit/<int:goal_id>/', goals_views.edit, name='goals_edit'),
+     path('goals/delete/<int:goal_id>/', goals_views.delete, name='goals_delete'),
+    #path('goals/', goals_views.show_goals, name='addgoals'),
 
-    path('goals/', goals_views.show_goals, name='addgoals'),
-
-    path('addgoals/delete/<int:record_id>/', goals_views.delete, name='delete'),
-    path('addgoals/add/', goals_views.add, name='record_add'),
-    path('addgoals/edit/<int:record_id>/', goals_views.edit, name='edit'),
+    #path('addgoals/delete/<int:record_id>/', goals_views.delete, name='delete'),
+    #path('addgoals/add/', goals_views.add, name='record_add'),
+    #path('addgoals/edit/<int:record_id>/', goals_views.edit, name='edit'),
 
     path('singup/', sing_views.singup, name='singup'),
     path('user/', sing_views.user, name='user'),

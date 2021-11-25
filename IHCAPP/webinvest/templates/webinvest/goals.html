@@ -10,7 +10,7 @@
         </div>
         <div class="row space-rows">
             <div class="col justify-content-end" id="account-values">
-                <div class="card cards-shadown cards-hover" >
+                <div class="card cards-shadown cards-hover">
                     <div class="card-header" style="background: rgb(24,78,142);"><span class="space"><a href="#"><i
                                     class="fa fa-cloud-download" id="download-icon-1"></i></a></span>
                         <div class="cardheader-text">
@@ -21,7 +21,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col justify-content-xl-center"  id="account-values">
+            <div class="col justify-content-xl-center" id="account-values">
                 <div class="card cards-shadown cards-hover">
                     <div class="card-header" style="background: rgb(24,78,142);"><span class="space"><a href="#"><i
                                     class="fa fa-cloud-download" id="download-icon-2"></i></a></span>
@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div class="col justify-content-end">
-                <div class="card cards-shadown cards-hover" >
+                <div class="card cards-shadown cards-hover">
                     <div class="card-header cards-header-hover" style="background: rgb(24,78,142);"><span
                             class="space"><a href="#"><i class="fa fa-cloud-download"
                                     id="download-icon-3"></i></a></span>
@@ -43,61 +43,67 @@
                         </div>
                     </div>
                 </div>
-                </div>
             </div>
         </div>
-        <div>
-            <div class="container">
-                <h2 class="display-4" style="font-size: 28.112px;">Últimos registros</h2>
-                <div class="table-responsive">
-                    <table class="table">
-                        <tbody>
-                            <tr>
-                                <td style="line-height: 60px;font-size: 20px;">Torta mil folhas, R$20.00</td>
-                            </tr>
-                            <tr>
-                                <td style="font-size: 20px;line-height: 60px;">Mocaccino, R$5.00</td>
-                            </tr>
-                            <tr>
-                                <td style="font-size: 20px;line-height: 60px;">Empanadas, R$10.00</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div><a class="btn btn-primary" href="{% url 'webinvest:record' %}" role="button">Ver registros</a>
-            </div>
-        </div>
-        <div class="card-group"></div>
     </div>
+
     <div class="container" style="height: 1032.67;">
         <h2 style="font-weight: bold;">Metas Definidas</h2>
-        <div class="col-auto col-md-4 col-xl-7 offset-xl-0" id="progressbar" style="width: 100%;">
-            <h5 style="height: 30;">Pagar Carro</h5>
-            <div class="progress beautiful progress-lg" style="width: 100%;">
-                <div class="progress-bar bg-primary" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
-                    style="width: 80%;">80%</div>
-            </div>
-            <div class="Push-20"></div><small class="form-text"></small><small class="form-text"></small>
-        </div>
-        <div class="col-md-4" id="progressbar" style="width: 100%;">
-            <h5 style="height: 30;">Aposentadoria</h5>
-            <div class="progress beautiful progress-lg" style="width: 100%;">
-                <div class="progress-bar bg-dark" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"
-                    style="width: 20%;">20%</div>
-            </div>
-        </div>
-        <div class="col-md-4" id="progressbar" style="width: 100%;">
-            <div class="Push-20"></div>
-            <h5 style="height: 30;">Viagem para Gramado</h5>
-            <div class="progress beautiful progress-lg" style="width: 100%;">
-                <div class="progress-bar bg-danger" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"
-                    style="width: 65%;">65%</div>
-            </div>
-            <div class="Push-20"></div>
 
-            <div class="Push-20">
-                <a class="btn btn-primary" href="{% url 'webinvest:statistics' %}" role="button">Consulta avançada</a>
+        {% for goal in goals %}
+
+        <div class="col-md-4" id="progressbar" style="width: 100%;">
+            <div class="Push-20"></div>
+            <h5 style="height: 30;"> <a style="color: #000;" href="{% url 'webinvest:goals_edit' goal.id %}">{{ goal.title }}</a> 
+                <a style="position:relative; top:9px;"  onclick="return confirm('Tem certeza que deseja excluir?')" class="btn btn-danger" href="{% url 'webinvest:goals_delete' goal.id %}" role="button"><i
+                class="far fa-trash-alt d-xl-flex justify-content-xl-center align-items-xl-center"></i></a></h5>
+
+            
+
+            <div class="progress beautiful progress-lg" style="width: 100%;">
+                
+                {% if goal.priority|stringformat:"s" == "Baixa" %}
+                    <div class="progress-bar bg-primary" aria-valuenow="{{ goal.percent }}" aria-valuemin="0"
+                        aria-valuemax="100" style="width: {{ goal.percent }}%;">{{ goal.percent }}%</div>
+                {% elif goal.priority|stringformat:"s" == "Média" %}
+                    <div class="progress-bar bg-green" aria-valuenow="{{ goal.percent }}" aria-valuemin="0"
+                        aria-valuemax="100" style="width: {{ goal.percent }}%;">{{ goal.percent }}%</div>
+                {% else %}
+                    <div class="progress-bar bg-danger" aria-valuenow="{{ goal.percent }}" aria-valuemin="0"
+                        aria-valuemax="100" style="width: {{ goal.percent }}%;">{{ goal.percent }}%</div>
+                {% endif %}
             </div>
+            <div class="Push-20"></div>
         </div>
+        {% endfor %}
+        <div class="Push-20">
+            <a class="btn btn-primary" href="{% url 'webinvest:goals_add' %}" role="button">Nova Meta</a>
+        </div>
+
+    </div>
+    <br />
+
+    <div>
+        <div class="container">
+            <h2 class="display-4" style="font-size: 28.112px;">Últimos registros</h2>
+            <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td style="line-height: 60px;font-size: 20px;">Torta mil folhas, R$20.00</td>
+                        </tr>
+                        <tr>
+                            <td style="font-size: 20px;line-height: 60px;">Mocaccino, R$5.00</td>
+                        </tr>
+                        <tr>
+                            <td style="font-size: 20px;line-height: 60px;">Empanadas, R$10.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div><a class="btn btn-primary" href="{% url 'webinvest:record' %}" role="button">Ver registros</a>
+        </div>
+    </div>
+    <div class="card-group"></div>
     </div>
     <header></header>
     <div class="container">
