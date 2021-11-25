@@ -63,10 +63,10 @@
             <div class="progress beautiful progress-lg" style="width: 100%;">
                 
                 {% if goal.priority|stringformat:"s" == "Baixa" %}
-                    <div class="progress-bar bg-primary" aria-valuenow="{{ goal.percent }}" aria-valuemin="0"
+                    <div class="progress-bar bg-green" aria-valuenow="{{ goal.percent }}" aria-valuemin="0"
                         aria-valuemax="100" style="width: {{ goal.percent }}%;">{{ goal.percent }}%</div>
                 {% elif goal.priority|stringformat:"s" == "Média" %}
-                    <div class="progress-bar bg-green" aria-valuenow="{{ goal.percent }}" aria-valuemin="0"
+                    <div class="progress-bar bg-primary" aria-valuenow="{{ goal.percent }}" aria-valuemin="0"
                         aria-valuemax="100" style="width: {{ goal.percent }}%;">{{ goal.percent }}%</div>
                 {% else %}
                     <div class="progress-bar bg-danger" aria-valuenow="{{ goal.percent }}" aria-valuemin="0"
